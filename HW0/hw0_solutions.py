@@ -103,3 +103,13 @@ while i < 3:
     itr.Next()
     i += 1
 print("")
+
+##########################################################
+##########################################################
+# Use NetworkX library
+import networkx as nx
+wiki_nw = nx.read_edgelist("wikipedia_data.txt",create_using=nx.DiGraph(), nodetype = int)
+nx.info(wiki_nw)
+print('Number of nodes: ',wiki_nw.number_of_nodes())
+print('Number of self loops: ',wiki_nw.number_of_selfloops())
+print('Number of directed edges: ',len(wiki_nw.edges()-len(wiki_nw.nodes_with_selfloops()))
